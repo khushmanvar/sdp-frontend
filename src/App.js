@@ -1,15 +1,8 @@
 import React from 'react'
-import SignUp from './Signup';
+import Signin from './SignIn';
 
-class App extends React.Component {
-  render(){
+export default function App(){
     return (
-      <>
-      <SignUp/>
-      
-      </>
+      <Signin></Signin>
     );
-  }
 }
-
-export default App;

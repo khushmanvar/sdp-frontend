@@ -1,23 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import axios from "axios";
 
-class Signup extends React.Component {
-    signup() {
-        // Simple POST request with a JSON body using fetch
-        console.log("Method Called");
-        axios.post('https://easybys13.herokuapp.com/signin', {
-            email: 'h@gmail.com',
-            password: '123456'
-          })
-          .then(function (response) {
-            console.log(response);
-          })
+export default function Signup(){
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState(''); 
+    const [name, setName] = useState(''); 
+    const [phoneNo, setPhone] = useState(''); 
+
+
+    const signup = () => {
+        const data = {email: email, password: password, name: name, phoneNo: phoneNo}
+        axios.post('http://easybus13.herokuapp.com/signup', data)
+          .then(response => console.log(response))
           .catch(function (error) {
             console.log(error);
           });
-            console.log("End");
     }
-    render() {
+
         return (
             <>
                 <div class="w-full bg-center bg-cover" style={{ backgroundImage: "url('https://cdn.shopify.com/s/files/1/0051/6869/3322/collections/Light_grey_background_color_869a123a-3589-48b7-8634-694d98d7e7af_1200x1200.png?v=1574187507')" }}>
@@ -48,20 +47,20 @@ class Signup extends React.Component {
 
                                 <form>
                                     <div class="w-full mt-4">
-                                        <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="email" placeholder="Email Address" aria-label="Email Address" />
+                                        <input value={email} onChange={e => setEmail(e.target.value)} class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="email" placeholder="Email Address" aria-label="Email Address" />
                                     </div>
                                     <div class="w-full mt-4">
-                                        <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="name" placeholder="Name" aria-label="Name" />
+                                        <input value={name} onChange={e => setName(e.target.value)} class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="name" placeholder="Name" aria-label="Name" />
                                     </div>
                                     <div class="w-full mt-4">
-                                        <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="" placeholder="Phone Number" aria-label="Phone Number" />
+                                        <input value={phoneNo} onChange={e => setPhone(e.target.value)} class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="" placeholder="Phone Number" aria-label="Phone Number" />
                                     </div>
                                     <div class="w-full mt-4">
-                                        <input class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="password" placeholder="Password" aria-label="Password" />
+                                        <input value={password} onChange={e => setPassword(e.target.value)} class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" type="password" placeholder="Password" aria-label="Password" />
                                     </div>
 
                                     <div class="flex flex-col justify-center items-center mt-4">
-                                        <button class="px-4 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none" onClick={this.signup} type="button">SignUp</button>
+                                        <button class="px-4 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none" onClick={signup} type="button">SignUp</button>
                                     </div>
                                 </form>
                             </div>
@@ -77,6 +76,3 @@ class Signup extends React.Component {
             </>
         );
     }
-}
-
-export default Signup;
