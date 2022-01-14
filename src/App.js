@@ -1,19 +1,29 @@
 import React from 'react'
-import Home from './pages/Home';
+import { Routes, Route } from 'react-router-dom';
+
+import Landing from './pages/Landing';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Alogin from './pages/admin/alogin';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Home from './pages/onlyAuth/home';
 
 export default function App(){
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/admin/login" component={Alogin} />
-          <Route path="/signin" component={Signin}/>
-          <Route path="/signup" component={Signup}/>
-        </Switch>
-      </Router>
+      <Routes>
+        <Route path="/" element={<CheckSession />} />
+        <Route path="/landing" element={<Landing />}/>
+        <Route path="/signin" element={<Signin />}/>
+        <Route path="/signup" element={<Signup />}/>
+        <Route path="/admin/login" element={<Alogin />}/>
+
+        <Route path="/home" element={<Home />}/>
+      </Routes>
     );
+}
+
+function CheckSession() {
+  if(!localStorage.getItem('AUTH_TOK')) {
+    return <Landing />
+  } else {  return <Home /> }
 }

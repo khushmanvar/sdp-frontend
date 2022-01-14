@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../components/Footer'
 
-export default function Home() {
+export default function Landing() {
     return (
 <div>
 <section class="pt-24">

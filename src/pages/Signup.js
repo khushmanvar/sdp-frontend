@@ -1,20 +1,20 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Signup(){
+    let navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
     const [name, setName] = useState(''); 
     const [phoneNo, setPhone] = useState(''); 
 
-
     const signup = () => {
         const data = {email: email, password: password, name: name, phoneNo: phoneNo}
         axios.post('http://easybus13.herokuapp.com/signup', data)
-          .then(response => console.log(response))
-          .catch(function (error) {
-            console.log(error);
-          });
+            .then(res => {
+                localStorage.setItem('AUTH_TOK', res.data.token);
+                navigate("/home"); })
     }
 
         return (
