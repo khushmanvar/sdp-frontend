@@ -1,8 +1,19 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Alogin() {
-	const [login, setLogin] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
+
+	const login = () => {
+		const data={email:email, password:password};
+		axios.post('https://easybus13.herokuapp.com/admin/login', data)
+			.then(res => {
+				localStorage.setItem('COND_TOK', res.data.token);
+				navigate("/admin"); })
+		}
 
     return (
         <div class="flex flex-col items-center justify-center min-h-screen bg-white">
@@ -12,17 +23,20 @@ export default function Alogin() {
 			class="block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300"
 			id="username"
 			type="text"
+			value={email} onChange={e => setEmail(e.target.value)}
 			placeholder="your email"
 		/>
 		<input
 			class="block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300"
 			id="password"
 			type="password"
+			value={password} onChange={p => setPassword(p.target.value)}
 			placeholder="password"
 		/>
-		<button class="inline-block mt-2 bg-green-600 hover:bg-green-700 focus:bg-green-800 px-6 py-2 rounded text-white shadow-lg">
+		<button onClick={login} class="inline-block mt-2 bg-green-600 hover:bg-green-700 focus:bg-green-800 px-6 py-2 rounded text-white shadow-lg">
 			Login
 		</button>
+		
 		<div class="pt-10 flex items-center justify-between">
 			<a
 				href="#1"
