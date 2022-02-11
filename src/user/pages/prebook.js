@@ -5,7 +5,7 @@ import axios from 'axios';
 function Prebook() {
 	const [tid, setTid] = useState();
 	const [name,setName]=useState(""); const[sno,setSno]=useState("");
-	const[isticket,setIsticket]=useState(false)
+	const[isticket,setIsticket]=useState(true)
 	
 	const location = useLocation();
 	const navigate = useNavigate();

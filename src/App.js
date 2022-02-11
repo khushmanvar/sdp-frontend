@@ -1,36 +1,40 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom';
 
-import Landing from './pages/Landing';
-import Signin from './pages/Signin';
-import Signup from './pages/Signup';
-import Alogin from './pages/admin/alogin';
-import Ahome from './pages/admin/ahome';
-
-import Home from './pages/onlyAuth/home';
-import Prebook from './pages/onlyAuth/prebook';
-import Ticket from './pages/onlyAuth/ticket';
+import Alogin from './admin/pages/alogin';
+import Ahome from './admin/pages/ahome';
+import LandingPage from './user/pages/landingPage';
+import HomePage from './user/pages/homePage';
+import LiveBook from './user/pages/liveBook';
+import Prebook from './user/pages/prebook';
+import SearchBuses from './user/pages/searchBus';
+import Signin from './user/components/signin';
+import Signup from './user/components/signup';
+import VerifyEmail from './user/components/verifyEmail';
+import VerifyPhone from './user/components/verifyPhone';
 
 export default function App(){
     return (
       <Routes>
         <Route path="/" element={<CheckSession />} />
-        <Route path="/landing" element={<Landing />}/>
-        <Route path="/signin" element={<Signin />}/>
-        <Route path="/signup" element={<Signup />}/>
+        <Route path="/landing" element={<LandingPage/>}/>
+        <Route path="/signin" element={<Signin/>}/>
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/verifyEmail" element={<VerifyEmail/>}/>
+        <Route path="/verifyPhone" element={<VerifyPhone/>}/>
         
         <Route path="/admin" element={<Ahome />}/>
         <Route path="/admin/login" element={<Alogin />}/>
 
-        <Route path="/home" element={<Home />}/>
         <Route path="/prebook" element={<Prebook />}/>
-        <Route path="/ticket" element={<Ticket />}/>
+        <Route path="/livebook" element={<LiveBook/>}/>
+        <Route path="/searchbus" element={<SearchBuses/>}/>
       </Routes>
     );
 }
 
 function CheckSession() {
   if(!localStorage.getItem('AUTH_TOK')) {
-    return <Landing />
-  } else {  return <Home /> }
+    return <LandingPage/>
+  } else {  return <HomePage /> }
 }
