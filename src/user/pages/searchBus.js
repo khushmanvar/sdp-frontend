@@ -1,4 +1,8 @@
+import DATA from "../../data/data"
+import { useNavigate } from "react-router-dom"
+
 export default function SearchBuses() {
+  const navigate = useNavigate();
     return(
       <div class="bg-gray-100">
       <div class="w-full">
@@ -29,110 +33,36 @@ export default function SearchBuses() {
 </div>
 
 <div class="bg-white rounded-lg border shadow-lg p-5 mx-10 my-10">
+  {DATA.map(i => (
+    <div>
       <div class="grid grid-cols-5 text-center">
-      <div class="">
-      <div class="flex">
-        <p class="text-3xl mt-4">Dwarka-Dakor</p>
-       </div>   
-       <p class="flex justify-start text-lg text-gray-500">Express</p>
-       </div> 
-       <div class="col-span-3">
-      <div class="grid grid-cols-3">
-        <p class="text-xl mt-4">6:00 am</p>
-        <p class="text-lg text-gray-500 mt-4">----- 10 hrs -----</p>
-        <p class="text-xl mt-4">3:00 pm</p>
-      </div>
-      </div>
-      <p class="text-xl mt-4 mr-4 flex justify-end">Rs. 198</p>
-      </div>
-      <div class="grid grid-cols-2">
-      <p class="text-xl text-gray-500 mt-4 justify-start text-start">23 Seats Available</p>
-      <div class="text-2xl text-gray-500 flex justify-end"><button class="bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white font-semibold font-sans">Book Now</button></div>
-      </div>
-      </div>
-
-      <div class="bg-white rounded-lg border shadow-lg p-5 mx-10 my-10">
-      <div class="grid grid-cols-5 text-center">
-      <div class="">
-      <div class="flex">
-        <p class="text-3xl mt-4">Dwarka-Dakor</p>
-       </div>   
-       <p class="flex justify-start text-lg text-gray-500">Express</p>
-       </div> 
-       <div class="col-span-3">
-      <div class="grid grid-cols-3">
-        <p class="text-xl mt-4">6:00 am</p>
-        <p class="text-lg text-gray-500 mt-4">----- 10 hrs -----</p>
-        <p class="text-xl mt-4">3:00 pm</p>
-      </div>
-      </div>
-      <p class="text-xl mt-4 mr-4 flex justify-end">Rs. 198</p>
-      </div>
-      <div class="grid grid-cols-2">
-      <p class="text-xl text-gray-500 mt-4 justify-start text-start">23 Seats Available</p>
-      <div class="text-2xl text-gray-500 flex justify-end"><button class="bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white font-semibold font-sans">Book Now</button></div>
-      </div>
-      </div>
-
-
-      <div class="bg-white rounded-lg border shadow-lg p-5 mx-10 my-10">
-      <div class="grid grid-cols-5 text-center">
-      <div class="">
-      <div class="flex">
-        <p class="text-3xl mt-4">Dwarka-Dakor</p>
-       </div>   
-       <p class="flex justify-start text-lg text-gray-500">Express</p>
-       </div> 
-       <div class="col-span-3">
-      <div class="grid grid-cols-3">
-        <p class="text-xl mt-4">6:00 am</p>
-        <p class="text-lg text-gray-500 mt-4">----- 10 hrs -----</p>
-        <p class="text-xl mt-4">3:00 pm</p>
-      </div>
-      </div>
-      <p class="text-xl mt-4 mr-4 flex justify-end">Rs. 198</p>
-      </div>
-      <div class="grid grid-cols-2">
-      <p class="text-xl text-gray-500 mt-4 justify-start text-start">23 Seats Available</p>
-      <div class="text-2xl text-gray-500 flex justify-end"><button class="bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white font-semibold font-sans">Book Now</button></div>
-      </div>
-        <hr class="mt-10"></hr>
-      <div class="flex mt-10">
-      <p class="text-2xl mr-4">No. of Passengers:</p>  
-      <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="number"/>
-      </div>  
-
-      <div class="grid grid-cols-3 mt-4">
-      <div class="flex mt-4 justify-start">
-      <p class="text-2xl mr-4">Name:</p>  
-      <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text"/>
-      </div>  
-      <div class="flex mt-4 justify-center">
-      <p class="text-2xl mr-4">Seat No.</p>  
-      <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="number"/>
-      </div>  
-      <div class="flex mt-4 justify-end">
-      <p class="text-2xl mr-4">Mobile No.</p>  
-      <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text"/>
-      </div>  
-      </div>  
-
-      <div class="grid grid-cols-3 mt-4">
-      <div class="flex mt-4 justify-start">
-      <p class="text-2xl mr-4">Name:</p>  
-      <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="number"/>
-      </div>  
-      <div class="flex mt-4 justify-center">
-      <p class="text-2xl mr-4">Seat No.</p>  
-      <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="number"/>
-      </div>  
-      <div class="flex mt-4 justify-end">
-      <p class="text-2xl mr-4">Mobile No.</p>  
-      <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="number"/>
-      </div>  
-      </div>  
-
+          <div class="">
+          <div class="flex justify-start">
+            <p class="text-3xl mt-4">{i.from}-{i.to}</p>
+          </div>   
+          <p class="flex justify-start text-lg text-gray-500">Express</p>
+        </div> 
+        <div class="col-span-3">
+          <div class="grid grid-cols-3">
+            <p class="text-xl mt-4">6:00 am</p>
+            <p class="text-lg text-gray-500 mt-4">----- {i.time} hrs -----</p>
+            <p class="text-xl mt-4">3:00 pm</p>
+          </div>
+        </div>
+        <p class="text-xl mt-4 mr-4 flex justify-end">Rs. {i.time * 9}</p>
+        </div>
+        <div class="grid grid-cols-2">
+          <p class="text-xl text-gray-500 mt-4 justify-start text-start">{i.seats} Seats Available</p>
+          <div class="text-2xl text-gray-500 flex justify-end">
+            <button onClick={() => navigate("/prebook", { state: {
+              bid:i.bid, dept: i.from, arr: i.to, time: i.time, fare: i.time*9, 
+            }})} class="bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white font-semibold font-sans">Book Now</button></div>
+        </div>
     </div>
+  ))}
+</div>
+
+      
     </div>
     )
 }

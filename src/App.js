@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import Alogin from './admin/pages/alogin';
 import Ahome from './admin/pages/ahome';
@@ -12,6 +12,8 @@ import Signin from './user/components/signin';
 import Signup from './user/components/signup';
 import VerifyEmail from './user/components/verifyEmail';
 import VerifyPhone from './user/components/verifyPhone';
+import Contact from './user/pages/contact';
+import Payment from './user/pages/payment';
 
 export default function App(){
     return (
@@ -22,6 +24,8 @@ export default function App(){
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/verifyEmail" element={<VerifyEmail/>}/>
         <Route path="/verifyPhone" element={<VerifyPhone/>}/>
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/payment" element={<Payment/>} />
         
         <Route path="/admin" element={<Ahome />}/>
         <Route path="/admin/login" element={<Alogin />}/>
@@ -36,5 +40,5 @@ export default function App(){
 function CheckSession() {
   if(!localStorage.getItem('AUTH_TOK')) {
     return <LandingPage/>
-  } else {  return <HomePage /> }
+  } else {  return <SearchBuses /> }
 }
