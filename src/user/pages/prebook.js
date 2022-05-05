@@ -19,7 +19,9 @@ function Prebook() {
 			.then(res => {
 				setTid(res.data.tid);
 			}); setIsticket(true);
-		navigate("/payment")
+		navigate("/payment", {
+			state: { data: data	}
+		})
 	}
 	
   return (
@@ -48,7 +50,7 @@ function Prebook() {
 		</div>
 	</div>
 
-    <div hidden={!isticket} className="bg-white font-semibold text-center rounded-lg border shadow-lg p-5 max-w-sm">
+    <div hidden={isticket} className="bg-white font-semibold text-center rounded-lg border shadow-lg p-5 max-w-sm">
       <img className="mb-3 w-52 h-52 rounded-3xl shadow-lg mx-auto" src="https://www.investopedia.com/thmb/ZG1jKEKttKbiHi0EkM8yJCJp6TU=/1148x1148/filters:no_upscale():max_bytes(150000):strip_icc()/qr-code-bc94057f452f4806af70fd34540f72ad.png" alt="product designer" />
       <p className="text-xs text-gray-500 italic">Ticket ID: {tid}</p>
       <h1 className="text-lg text-gray-700">{name}</h1>

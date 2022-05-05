@@ -45,7 +45,7 @@ export default function Signup(){
                                     </div>
 
                                     <div class="flex flex-col justify-center items-center mt-4">
-                                        <button class="px-4 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none" onClick={signup} type="button">SignUp</button>
+                                        <button class="px-4 py-2 leading-5 text-white transition-colors duration-200 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none" onClick={() => navigate("/")} type="button">SignUp</button>
                                     </div>
                                 </form>
                             </div>
@@ -53,7 +53,7 @@ export default function Signup(){
                             <div class="flex items-center justify-center py-4 text-center bg-gray-50 dark:bg-gray-700">
                                 <span class="text-sm text-gray-600 dark:text-gray-200">Already have an account? </span>
 
-                                <a href="#" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">SignIn</a>
+                                <a href="/signin" class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline">SignIn</a>
                             </div>
                         </div>
                     </div>

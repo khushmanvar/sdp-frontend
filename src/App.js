@@ -14,6 +14,7 @@ import VerifyEmail from './user/components/verifyEmail';
 import VerifyPhone from './user/components/verifyPhone';
 import Contact from './user/pages/contact';
 import Payment from './user/pages/payment';
+import Ticket from './user/pages/ticket';
 
 export default function App(){
     return (
@@ -26,6 +27,7 @@ export default function App(){
         <Route path="/verifyPhone" element={<VerifyPhone/>}/>
         <Route path="/contact" element={<Contact/>} />
         <Route path="/payment" element={<Payment/>} />
+        <Route path="/ticket" element={<Ticket/>} />
         
         <Route path="/admin" element={<Ahome />}/>
         <Route path="/admin/login" element={<Alogin />}/>

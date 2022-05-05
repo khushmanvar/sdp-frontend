@@ -39,8 +39,7 @@ export default function NavBar(){
       <span class="ml-3 text-xl">EasyBus</span>
     </a>
     <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <a href="/searchbus" class="mr-5 hover:text-gray-900">Search Buses</a>
-      <a href="/prebook" class="mr-5 hover:text-gray-900">Advance Booking</a>
+      <a href="/" class="mr-5 hover:text-gray-900">Advance Booking</a>
       <a href="/livebook" class="mr-5 hover:text-gray-900">Live Booking</a>
       <a href="/contact" class="mr-5 hover:text-gray-900">Contact Us</a>
     </nav>

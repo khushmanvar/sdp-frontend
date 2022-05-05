@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom"
+
 export default function LiveBook(){
+  const navigate = useNavigate();
     return(
         <>
         <div class="w-full">
@@ -28,7 +31,7 @@ export default function LiveBook(){
       <input class="bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text"/>
       </div> 
                 <div class="flex items-center justify-center w-full">
-                    <button class="mt-9 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white font-semibold font-sans">
+                    <button onClick={() => navigate("/payment")} class="mt-9 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white font-semibold font-sans">
                         Search
                     </button>
                 </div>

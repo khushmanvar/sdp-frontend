@@ -15,7 +15,7 @@ export default function Desciption(){
                    <p class="mb-8 leading-relaxed">Everything that you need to make the travel hassle free - rest stop details, boarding point images, chat with co-passengers, wake-up alarm and much more!</p>
                  </div>
                  <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                   <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
+                   <img class="object-cover object-center rounded" alt="hero" src="https://images.unsplash.com/photo-1611851122451-3a4e9e93c4ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"/>
                  </div>
                </div>
              </section>
@@ -31,14 +31,14 @@ export default function Desciption(){
                  <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
                    <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                      <div class="rounded-lg h-64 overflow-hidden">
-                       <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1203x503"/>
+                       <img alt="content" class="object-cover object-center h-full w-full" src="https://images.unsplash.com/photo-1594973113689-51d074f2b9b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fDcyMCo2MDB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"/>
                      </div>
                      <h2 class="text-xl font-medium title-font text-gray-900 mt-5">SUPERIOR CUSTOMER SERVICE</h2>
                      <p class="text-base leading-relaxed mt-2">We put our experience and relationships to good use and are available to solve your travel issues.</p>
                    </div>
                    <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                      <div class="rounded-lg h-64 overflow-hidden">
-                       <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1204x504"/>
+                       <img alt="content" class="object-cover object-center h-full w-full" src="https://images.unsplash.com/photo-1562884972-181a8759c938?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fDcyMCo2MDB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"/>
                      </div>
                      <h2 class="text-xl font-medium title-font text-gray-900 mt-5">LOWEST PRICES</h2>
                      <p class="text-base leading-relaxed mt-2">We always give you the lowest price with the best partner offers.</p>
@@ -46,7 +46,7 @@ export default function Desciption(){
                    </div>
                    <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
                      <div class="rounded-lg h-64 overflow-hidden">
-                       <img alt="content" class="object-cover object-center h-full w-full" src="https://dummyimage.com/1205x505"/>
+                       <img alt="content" class="object-cover object-center h-full w-full" src="https://images.unsplash.com/photo-1594942534578-82238eb891c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fDcyMCo2MDB8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"/>
                      </div>
                      <h2 class="text-xl font-medium title-font text-gray-900 mt-5">UNMATCHED BENEFITS</h2>
                      <p class="text-base leading-relaxed mt-2">We take care of your travel beyond ticketing by providing you with innovative and unique benefits.</p>

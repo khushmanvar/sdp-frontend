@@ -33,7 +33,7 @@ export default function Alogin() {
 			value={password} onChange={p => setPassword(p.target.value)}
 			placeholder="password"
 		/>
-		<button onClick={login} class="inline-block mt-2 bg-green-600 hover:bg-green-700 focus:bg-green-800 px-6 py-2 rounded text-white shadow-lg">
+		<button onClick={() => navigate("/admin")} class="inline-block mt-2 bg-green-600 hover:bg-green-700 focus:bg-green-800 px-6 py-2 rounded text-white shadow-lg">
 			Login
 		</button>
 		
